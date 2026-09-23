@@ -1,4 +1,4 @@
-class Sport {
+class AjoutSport {
   final String nom;
   final String description;
   final int dureeMatch;
@@ -6,7 +6,7 @@ class Sport {
   final String competitions;
   final List<String> competences;
 
-  Sport({
+  AjoutSport({
     required this.nom,
     required this.description,
     required this.dureeMatch,
