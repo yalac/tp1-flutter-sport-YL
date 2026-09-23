@@ -44,12 +44,12 @@ class _NavigationState extends State<Navigation> {
           NavigationDestination(
             selectedIcon: Icon(Icons.home),
             icon: Icon(Icons.home_outlined),
-            label: 'Home',
+            label: 'Accueil',
             tooltip: '',
           ),
           NavigationDestination(
             icon: Icon(Icons.more_horiz),
-            label: 'Detail',
+            label: 'Détail',
             tooltip: '',
           ),
           NavigationDestination(
