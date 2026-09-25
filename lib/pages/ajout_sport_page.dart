@@ -5,7 +5,7 @@ class AjoutSportPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -13,6 +13,12 @@ class AjoutSportPage extends StatelessWidget {
             'Page d\'ajout',
             style: TextStyle(fontSize: 24),
             textAlign: TextAlign.center,
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text('Retour en arrière'),
           ),
         ],
       ),

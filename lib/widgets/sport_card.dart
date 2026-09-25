@@ -46,8 +46,8 @@ class SportCard extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => DetailSportPage(),
+                        MaterialPageRoute<void>(
+                          builder: (context) => const DetailSportPage(),
                         ),
                       );
                     },
