@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tp1_sport_yl/widgets/sport_card.dart';
 
 class HomePage extends StatefulWidget {
   const new({super.key});
@@ -13,13 +14,7 @@ class _HomePageState extends State<HomePage> {
     return const Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            'Page d\'accueil',
-            style: TextStyle(fontSize: 24),
-            textAlign: TextAlign.center,
-          ),
-        ],
+        children: [SportCard()],
       ),
     );
   }
