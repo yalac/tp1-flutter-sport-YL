@@ -12,23 +12,27 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.grey,
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SportCard(),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => AjoutSportPage()),
-                );
-              },
-              child: Text('Ajouter un sport'),
+    return MaterialApp(
+      home: Scaffold(
+        body: Container(
+          color: Colors.grey,
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SportCard(),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AjoutSportPage()),
+                    );
+                  },
+                  child: Text('Ajouter un sport'),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
