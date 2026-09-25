@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tp1_sport_yl/pages/detail_sport_page.dart';
 
 class SportCard extends StatelessWidget {
   const new({super.key});
@@ -42,7 +43,14 @@ class SportCard extends StatelessWidget {
                   padding: EdgeInsets.only(right: 20),
                   width: 150,
                   child: FloatingActionButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DetailSportPage(),
+                        ),
+                      );
+                    },
                     child: Text('En savoir plus'),
                   ),
                 ),
