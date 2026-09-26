@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SportCard(),
-                    ElevatedButton(
+                    FloatingActionButton(
                       onPressed: () {
                         Navigator.push(
                           context,
