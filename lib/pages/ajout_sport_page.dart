@@ -25,6 +25,50 @@ class AjoutSportPage extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(height: 10),
+
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: TextField(
+              decoration: InputDecoration(
+                border: UnderlineInputBorder(),
+                hintText: 'Entrer la description du sport',
+              ),
+            ),
+          ),
+          SizedBox(height: 10),
+
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: TextField(
+              decoration: InputDecoration(
+                border: UnderlineInputBorder(),
+                hintText: 'Entrer la durée moyenne d\'un match',
+              ),
+            ),
+          ),
+          SizedBox(height: 10),
+
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: TextField(
+              decoration: InputDecoration(
+                border: UnderlineInputBorder(),
+                hintText: 'Entrer la compétition la plus prestigieuse',
+              ),
+            ),
+          ),
+          SizedBox(height: 10),
+
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: TextField(
+              decoration: InputDecoration(
+                border: UnderlineInputBorder(),
+                hintText: 'Entrer les compétences requises pour le sport',
+              ),
+            ),
+          ),
           SizedBox(height: 30),
 
           ElevatedButton(
