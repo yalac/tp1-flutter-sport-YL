@@ -16,7 +16,7 @@ class _AjoutSportPageState extends State<AjoutSportPage> {
   final competitionController = TextEditingController();
   final competenceController = TextEditingController();
 
-  void Enregistrer() {
+  void enregistrer() {
     final ajoutSport = Sport(
       nom: nomController.text,
       description: descriptionController.text,
@@ -80,7 +80,7 @@ class _AjoutSportPageState extends State<AjoutSportPage> {
           ),
           SizedBox(height: 30),
 
-          ElevatedButton(onPressed: Enregistrer, child: Text('Enregistrer')),
+          ElevatedButton(onPressed: enregistrer, child: Text('Enregistrer')),
         ],
       ),
     );
