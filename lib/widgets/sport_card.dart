@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:tp1_sport_yl/models/sport.dart';
 import 'package:tp1_sport_yl/pages/detail_sport_page.dart';
 
 class SportCard extends StatelessWidget {
-  const new({super.key});
+  final Sport sport;
+
+  const SportCard({super.key, required this.sport});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +33,7 @@ class SportCard extends StatelessWidget {
                   Container(
                     padding: EdgeInsets.only(left: 10),
                     child: Text(
-                      'Titre du sport',
+                      sport.nom,
                       style: TextStyle(color: Colors.redAccent, fontSize: 25),
                       textAlign: TextAlign.center,
                     ),
@@ -39,7 +42,7 @@ class SportCard extends StatelessWidget {
                   Container(
                     padding: EdgeInsets.only(left: 10),
                     child: Text(
-                      'Petite description du sport',
+                      sport.description,
                       style: TextStyle(color: Colors.grey, fontSize: 15),
                     ),
                   ),

@@ -42,7 +42,8 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SportCard(),
+                    SportCard(sport: sports[0]),
+                    SportCard(sport: sports[1]),
                     FloatingActionButton(
                       onPressed: () {
                         Navigator.push(
