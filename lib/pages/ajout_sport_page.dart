@@ -10,89 +10,64 @@ class AjoutSportPage extends StatefulWidget {
 class _AjoutSportPageState extends State<AjoutSportPage> {
   final nomController = TextEditingController();
   final descriptionController = TextEditingController();
-  final durationController = TextEditingController();
+  final dureeController = TextEditingController();
   final competitionController = TextEditingController();
   final competenceController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      appBar: AppBar(
+        title: const Text(
+          'Page d\'ajout',
+          style: TextStyle(fontSize: 25),
+          textAlign: TextAlign.center,
+        ),
+      ),
+      body: ListView(
+        padding: EdgeInsets.all(10),
         children: [
-          Text(
-            'Page d\'ajout',
-            style: TextStyle(fontSize: 24),
-            textAlign: TextAlign.center,
+          // Champ pour le nom du sport
+          TextField(
+            controller: nomController,
+            decoration: InputDecoration(hintText: 'Entrer le nom du sport'),
           ),
-          SizedBox(height: 10),
 
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: TextField(
-              controller: nomController,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Entrer le nom du sport',
-              ),
+          // Champ pour la description du sport
+          TextField(
+            controller: descriptionController,
+            decoration: InputDecoration(
+              hintText: 'Entrer la description du sport',
             ),
           ),
-          SizedBox(height: 10),
 
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: TextField(
-              controller: descriptionController,
-              decoration: InputDecoration(
-                border: UnderlineInputBorder(),
-                hintText: 'Entrer la description du sport',
-              ),
+          // Champ pour la durée d'un match
+          TextField(
+            keyboardType: TextInputType.number,
+            controller: dureeController,
+            decoration: InputDecoration(
+              hintText: 'Combien de temps dure un match',
             ),
           ),
-          SizedBox(height: 10),
 
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: TextField(
-              controller: durationController,
-              decoration: InputDecoration(
-                border: UnderlineInputBorder(),
-                hintText: 'Entrer la durée moyenne d\'un match',
-              ),
+          // Champ pour la compétition la plus prestigieuse
+          TextField(
+            controller: competitionController,
+            decoration: InputDecoration(
+              hintText: 'Entrer la compétition la plus prestigieuse',
             ),
           ),
-          SizedBox(height: 10),
 
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: TextField(
-              controller: competitionController,
-              decoration: InputDecoration(
-                border: UnderlineInputBorder(),
-                hintText: 'Entrer la compétition la plus prestigieuse',
-              ),
-            ),
-          ),
-          SizedBox(height: 10),
-
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: TextField(
-              controller: competenceController,
-              decoration: InputDecoration(
-                border: UnderlineInputBorder(),
-                hintText: 'Entrer les compétences requises pour le sport',
-              ),
+          // Champ pour les compétences requises pour le sport
+          TextField(
+            controller: competenceController,
+            decoration: InputDecoration(
+              hintText: 'Entrer les compétences requises pour le sport',
             ),
           ),
           SizedBox(height: 30),
 
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: Text('Retour en arrière'),
-          ),
+          ElevatedButton(onPressed: () {}, child: Text('Enregistrer')),
         ],
       ),
     );
