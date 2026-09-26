@@ -31,34 +31,27 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Builder(
-        builder: (context) {
-          return Scaffold(
-            body: Container(
-              color: Colors.grey,
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SportCard(sport: sports[0]),
-                    SportCard(sport: sports[1]),
-                    FloatingActionButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute<void>(
-                            builder: (context) => const AjoutSportPage(),
-                          ),
-                        );
-                      },
-                      child: Text('Ajouter un sport'),
-                    ),
-                  ],
-                ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Liste des sports', style: TextStyle(fontSize: 25)),
+        ),
+        body: ListView.builder(
+          itemCount: sports.length,
+          itemBuilder: (BuildContext context, int index) {
+            return SportCard(sport: sports[index]);
+          },
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute<void>(
+                builder: (context) => const AjoutSportPage(),
               ),
-            ),
-          );
-        },
+            );
+          },
+          child: Text('Ajouter un sport'),
+        ),
       ),
     );
   }
