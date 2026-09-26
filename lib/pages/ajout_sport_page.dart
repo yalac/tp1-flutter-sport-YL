@@ -59,7 +59,7 @@ class _AjoutSportPageState extends State<AjoutSportPage> {
             keyboardType: TextInputType.number,
             controller: dureeController,
             decoration: InputDecoration(
-              hintText: 'Combien de temps dure un match',
+              hintText: 'Combien de temps dure un match (en minutes)',
             ),
           ),
 

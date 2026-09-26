@@ -28,7 +28,7 @@ class DetailSportPage extends StatelessWidget {
 
               // Durée d'un match
               Text(
-                'Durée d\'un match : ${sport.dureeMatch}',
+                'Durée d\'un match : ${sport.dureeMatch} minute(s)',
                 style: TextStyle(fontSize: 15),
               ),
               SizedBox(height: 10),
