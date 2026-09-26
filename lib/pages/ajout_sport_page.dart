@@ -5,8 +5,8 @@ class AjoutSportPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
+    return Scaffold(
+      body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
@@ -14,6 +14,19 @@ class AjoutSportPage extends StatelessWidget {
             style: TextStyle(fontSize: 24),
             textAlign: TextAlign.center,
           ),
+          SizedBox(height: 10),
+
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'Entrer le nom du sport',
+              ),
+            ),
+          ),
+          SizedBox(height: 30),
+
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
