@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
 
-class AjoutSportPage extends StatelessWidget {
-  const new({super.key});
+class AjoutSportPage extends StatefulWidget {
+  const AjoutSportPage({super.key});
+
+  @override
+  State<AjoutSportPage> createState() => _AjoutSportPageState();
+}
+
+class _AjoutSportPageState extends State<AjoutSportPage> {
+  final nomController = TextEditingController();
+  final descriptionController = TextEditingController();
+  final durationController = TextEditingController();
+  final competitionController = TextEditingController();
+  final competenceController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +30,7 @@ class AjoutSportPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(10),
             child: TextField(
+              controller: nomController,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: 'Entrer le nom du sport',
@@ -30,6 +42,7 @@ class AjoutSportPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(10),
             child: TextField(
+              controller: descriptionController,
               decoration: InputDecoration(
                 border: UnderlineInputBorder(),
                 hintText: 'Entrer la description du sport',
@@ -41,6 +54,7 @@ class AjoutSportPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(10),
             child: TextField(
+              controller: durationController,
               decoration: InputDecoration(
                 border: UnderlineInputBorder(),
                 hintText: 'Entrer la durée moyenne d\'un match',
@@ -52,6 +66,7 @@ class AjoutSportPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(10),
             child: TextField(
+              controller: competitionController,
               decoration: InputDecoration(
                 border: UnderlineInputBorder(),
                 hintText: 'Entrer la compétition la plus prestigieuse',
@@ -63,6 +78,7 @@ class AjoutSportPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(10),
             child: TextField(
+              controller: competenceController,
               decoration: InputDecoration(
                 border: UnderlineInputBorder(),
                 hintText: 'Entrer les compétences requises pour le sport',
