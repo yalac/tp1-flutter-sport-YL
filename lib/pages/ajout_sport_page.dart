@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../models/sport.dart';
+
 class AjoutSportPage extends StatefulWidget {
   const AjoutSportPage({super.key});
 
@@ -13,6 +15,17 @@ class _AjoutSportPageState extends State<AjoutSportPage> {
   final dureeController = TextEditingController();
   final competitionController = TextEditingController();
   final competenceController = TextEditingController();
+
+  void Enregistrer() {
+    final ajoutSport = Sport(
+      nom: nomController.text,
+      description: descriptionController.text,
+      dureeMatch: int.parse(dureeController.text),
+      competitions: competitionController.text,
+      competences: competenceController.text.split(','),
+    );
+    Navigator.pop(context, ajoutSport);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,12 +75,12 @@ class _AjoutSportPageState extends State<AjoutSportPage> {
           TextField(
             controller: competenceController,
             decoration: InputDecoration(
-              hintText: 'Entrer les compétences requises pour le sport',
+              hintText: 'Entrer les compétences requises pour le sport (séparées par des virgules)',
             ),
           ),
           SizedBox(height: 30),
 
-          ElevatedButton(onPressed: () {}, child: Text('Enregistrer')),
+          ElevatedButton(onPressed: Enregistrer, child: Text('Enregistrer')),
         ],
       ),
     );
