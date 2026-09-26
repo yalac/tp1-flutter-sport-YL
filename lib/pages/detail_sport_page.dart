@@ -33,11 +33,6 @@ class DetailSportPage extends StatelessWidget {
               ),
               SizedBox(height: 10),
 
-              // Image pour représenter le sport
-              Text('Représentation du sport ci-dessous'),
-              Image.asset(sport.image, width: 300, height: 300),
-              SizedBox(height: 10),
-
               // Compétitions la plus prestigieuse du sport
               Text(
                 'Compétitions la plus prestigieuse : ${sport.competitions}',
