@@ -10,6 +10,11 @@ class AjoutSportPage extends StatefulWidget {
 }
 
 class _AjoutSportPageState extends State<AjoutSportPage> {
+  String? erreurNom;
+  String? erreurDescription;
+  String? erreurDuree;
+  String? erreurCompetition;
+  String? erreurCompetence;
   final nomController = TextEditingController();
   final descriptionController = TextEditingController();
   final dureeController = TextEditingController();
@@ -17,14 +22,52 @@ class _AjoutSportPageState extends State<AjoutSportPage> {
   final competenceController = TextEditingController();
 
   void enregistrer() {
-    final ajoutSport = Sport(
-      nom: nomController.text,
-      description: descriptionController.text,
-      dureeMatch: int.parse(dureeController.text),
-      competitions: competitionController.text,
-      competences: competenceController.text.split(','),
-    );
-    Navigator.pop(context, ajoutSport);
+    erreurNom = null;
+    erreurDescription = null;
+    erreurDuree = null;
+    erreurCompetition = null;
+    erreurCompetence = null;
+    if (nomController.text.trim().isEmpty) {
+      setState(() {
+        erreurNom = 'Entrez un nom de sport';
+      });
+      return;
+    }
+    if (descriptionController.text.isEmpty) {
+      setState(() {
+        erreurDescription = 'Entrez une description de sport';
+      });
+      return;
+    }
+    if (dureeController.text.isEmpty) {
+      setState(() {
+        erreurDuree = 'Entrez une durée de match (en minutes)';
+      });
+      return;
+    }
+    if (competitionController.text.isEmpty) {
+      setState(() {
+        erreurCompetition = 'Entrez au moins une compétition';
+      });
+      return;
+    }
+    if (competenceController.text.isEmpty) {
+      setState(() {
+        erreurCompetence = 'Entrez au moins une compétence';
+      });
+      return;
+    } else {
+      setState(() {
+        final ajoutSport = Sport(
+          nom: nomController.text,
+          description: descriptionController.text,
+          dureeMatch: int.parse(dureeController.text),
+          competitions: competitionController.text,
+          competences: competenceController.text.split(','),
+        );
+        Navigator.pop(context, ajoutSport);
+      });
+    }
   }
 
   @override
@@ -43,14 +86,19 @@ class _AjoutSportPageState extends State<AjoutSportPage> {
           // Champ pour le nom du sport
           TextField(
             controller: nomController,
-            decoration: InputDecoration(hintText: 'Entrer le nom du sport'),
+            decoration: InputDecoration(
+              labelText: 'Entrer le nom du sport',
+              errorText: erreurNom,
+            ),
           ),
+          SizedBox(height: 20),
 
           // Champ pour la description du sport
           TextField(
             controller: descriptionController,
             decoration: InputDecoration(
-              hintText: 'Entrer la description du sport',
+              labelText: 'Entrer la description du sport',
+              errorText: erreurDescription,
             ),
           ),
 
@@ -59,23 +107,28 @@ class _AjoutSportPageState extends State<AjoutSportPage> {
             keyboardType: TextInputType.number,
             controller: dureeController,
             decoration: InputDecoration(
-              hintText: 'Combien de temps dure un match (en minutes)',
+              labelText: 'Combien de temps dure un match (en minutes)',
+              errorText: erreurDuree,
             ),
           ),
+          SizedBox(height: 20),
 
           // Champ pour la compétition la plus prestigieuse
           TextField(
             controller: competitionController,
             decoration: InputDecoration(
-              hintText: 'Entrer la compétition la plus prestigieuse',
+              labelText: 'Entrer la compétition la plus prestigieuse',
+              errorText: erreurCompetition,
             ),
           ),
+          SizedBox(height: 20),
 
           // Champ pour les compétences requises pour le sport
           TextField(
             controller: competenceController,
             decoration: InputDecoration(
-              hintText: 'Entrer les compétences requises pour le sport (séparées par des virgules)',
+              labelText: 'Entrer les compétences requises pour le sport (séparées par des virgules)',
+              errorText: erreurCompetence,
             ),
           ),
           SizedBox(height: 30),
