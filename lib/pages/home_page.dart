@@ -43,18 +43,31 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF1E1B2E),
       appBar: AppBar(
-        title: Text('Liste des sports', style: TextStyle(fontSize: 25)),
+        backgroundColor: Color(0xFF2B2740),
+        foregroundColor: Colors.white,
+        elevation: 0,
+        centerTitle: true,
+        title: const Text(
+          'Liste des sports',
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
+        ),
       ),
       body: ListView.builder(
+        padding: EdgeInsets.only(top: 10, bottom: 100),
         itemCount: sports.length,
         itemBuilder: (BuildContext context, int index) {
           return SportCard(sport: sports[index]);
         },
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(0xFF7C4DFF),
+        foregroundColor: Colors.white,
+        elevation: 5,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         onPressed: ajouterSport,
-        child: Icon(Icons.add),
+        child: Icon(Icons.add, size: 25),
       ),
     );
   }
