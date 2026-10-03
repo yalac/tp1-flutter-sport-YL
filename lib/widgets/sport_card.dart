@@ -10,8 +10,12 @@ class SportCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.blueGrey,
+      color: Color(0xFF2B2740),
+      elevation: 3,
+      margin: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: InkWell(
+        borderRadius: BorderRadius.circular(10),
         onTap: () {
           Navigator.push(
             context,
@@ -26,27 +30,38 @@ class SportCard extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    padding: EdgeInsets.only(left: 10),
-                    child: Text(
+              Container(
+                width: 5,
+                height: double.infinity,
+                decoration: BoxDecoration(
+                  color: Color(0xFF7C4DFF),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    bottomLeft: Radius.circular(10),
+                  ),
+                ),
+              ),
+              SizedBox(width: 15),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
                       sport.nom,
-                      style: TextStyle(color: Colors.redAccent, fontSize: 25),
-                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Color(0xFFBCA7FF),
+                        fontSize: 25,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 10),
-                  Container(
-                    padding: EdgeInsets.only(left: 10),
-                    child: Text(
+                    SizedBox(height: 10),
+                    Text(
                       sport.description,
-                      style: TextStyle(color: Colors.grey, fontSize: 15),
+                      style: TextStyle(color: Colors.white70, fontSize: 15),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ],
           ),
