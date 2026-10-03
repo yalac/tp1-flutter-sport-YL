@@ -4,7 +4,7 @@ import 'package:tp1_sport_yl/widgets/sport_card.dart';
 import 'package:tp1_sport_yl/models/sport.dart';
 
 class HomePage extends StatefulWidget {
-  const new({super.key});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: ajouterSport,
-        child: Text('Ajouter un sport'),
+        child: Icon(Icons.add),
       ),
     );
   }

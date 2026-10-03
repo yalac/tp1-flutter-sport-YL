@@ -39,7 +39,8 @@ class _AjoutSportPageState extends State<AjoutSportPage> {
       });
       return;
     }
-    if (dureeController.text.isEmpty) {
+    if (dureeController.text.isEmpty ||
+        double.tryParse(dureeController.text) == null) {
       setState(() {
         erreurDuree = 'Entrez une durée de match (en minutes)';
       });
@@ -101,10 +102,10 @@ class _AjoutSportPageState extends State<AjoutSportPage> {
               errorText: erreurDescription,
             ),
           ),
+          SizedBox(height: 20),
 
           // Champ pour la durée d'un match
           TextField(
-            keyboardType: TextInputType.number,
             controller: dureeController,
             decoration: InputDecoration(
               labelText: 'Combien de temps dure un match (en minutes)',
