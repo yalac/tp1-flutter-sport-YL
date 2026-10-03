@@ -133,7 +133,21 @@ class _AjoutSportPageState extends State<AjoutSportPage> {
           ),
           SizedBox(height: 30),
 
-          ElevatedButton(onPressed: enregistrer, child: Text('Enregistrer')),
+          Row(
+            children: [
+              ElevatedButton(
+                onPressed: enregistrer,
+                child: Text('Enregistrer'),
+              ),
+              SizedBox(width: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text('Annuler'),
+              ),
+            ],
+          ),
         ],
       ),
     );
