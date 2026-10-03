@@ -8,20 +8,19 @@ class DetailSportPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Page de détail du sport de : ${sport.nom}',
+          style: TextStyle(fontSize: 25),
+          textAlign: TextAlign.center,
+        ),
+      ),
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.only(left: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Titre de du sport
-              Text(
-                'Page de détail du sport de : ${sport.nom}',
-                style: TextStyle(fontSize: 25),
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(height: 10),
-
               // Description du sport
               Text(sport.description, style: TextStyle(fontSize: 15)),
               SizedBox(height: 10),
