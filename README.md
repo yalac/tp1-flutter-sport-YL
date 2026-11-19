@@ -14,3 +14,17 @@ J'ai choisi comme thème les activités sportives puisqu'il s'agit d'une de mes 
 - dureeMatch : Durée moyenne d'un match du sport en question
 - competitions : Compétitions la plus prestigieuse du sport en question
 - competences : Listes des compétences requises et ou nécessaire pour jouer ce sport. Ou encore celle que le sport t'apprend.
+
+### Installation
+
+```bash
+# Cloner le projet puis s'y déplacer
+git clone https://github.com/yalac/tp1-flutter-sport-YL.git
+cd .\tp1-flutter-sport-YL\
+
+# Récupérer les dépendences
+flutter pub get
+
+# Lancer sur Windows
+flutter run -d windows
+```
